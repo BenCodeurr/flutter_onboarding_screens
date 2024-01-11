@@ -26,6 +26,7 @@ class _MyHomePageState extends State<MyHomePage> {
               child: Center(
                 child: SvgPicture.asset(
                   'images/hero.svg',
+                  // fit: BoxFit.fitWidth,
                   height: 250.0,
                 ),
               ),
@@ -33,13 +34,13 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
           Expanded(
             child: Padding(
-              padding: const EdgeInsets.all(15.0),
+              padding: const EdgeInsets.all(10.0),
               child: Text(
-                'Discover your dream job here',
+                'Discover Your\nDream Job Here',
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   color: HexColor('#F50057'),
-                  fontSize: 30.0,
+                  fontSize: 32.0,
                   fontWeight: FontWeight.bold,
                 ),
               ),
@@ -49,66 +50,61 @@ class _MyHomePageState extends State<MyHomePage> {
             child: Padding(
               padding: EdgeInsets.all(20.0),
               child: Text(
-                'Unlock Your Career Destiny: Explore Opportunities and Discover Your Dream Job Today!',
+                'Discover you dream job abd apply with your\nCV if you have one!',
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   color: Colors.black,
-                  fontSize: 15.0,
+                  fontSize: 16.0,
                 ),
               ),
             ),
           ),
           Expanded(
-            child: Padding(
-              padding: const EdgeInsets.only(left: 40.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  TextButton(
-                    style: TextButton.styleFrom(
-                      backgroundColor: HexColor('#F50057'),
-                      foregroundColor: Colors.white,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(5.0),
-                      ),
-                    ),
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => const Login()),
-                      );
-                    },
-                    child: const Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 15.0),
-                      child: Text(
-                        'Login',
-                        style: TextStyle(
-                          fontSize: 20.0,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                TextButton(
+                  style: TextButton.styleFrom(
+                    backgroundColor: HexColor('#F50057'),
+                    foregroundColor: Colors.white,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(5.0),
                     ),
                   ),
-                  const SizedBox(
-                    width: 30.0,
-                  ),
-                  TextButton(
-                    style: TextButton.styleFrom(
-                      foregroundColor: Colors.black,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(5.0),
-                      ),
-                    ),
-                    onPressed: () {},
-                    child: const Text(
-                      'Register',
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const Login()),
+                    );
+                  },
+                  child: const Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 15.0),
+                    child: Text(
+                      'Login',
                       style: TextStyle(
                         fontSize: 20.0,
+                        fontWeight: FontWeight.bold,
                       ),
                     ),
                   ),
-                ],
-              ),
+                ),
+                TextButton(
+                  style: TextButton.styleFrom(
+                    foregroundColor: Colors.black,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(5.0),
+                    ),
+                  ),
+                  onPressed: () {},
+                  child: const Text(
+                    'Register',
+                    style: TextStyle(
+                      fontSize: 20.0,
+                    ),
+                  ),
+                ),
+              ],
             ),
           ),
         ],
