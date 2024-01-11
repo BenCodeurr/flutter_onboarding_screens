@@ -1,27 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
-import 'signup.dart';
 
-class Login extends StatelessWidget {
-  const Login({Key? key});
+class Signup extends StatelessWidget {
+  const Signup({super.key});
 
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: LoginPage(),
+      home: SignUpPage(),
     );
   }
 }
 
-class LoginPage extends StatefulWidget {
-  const LoginPage({Key? key});
+class SignUpPage extends StatefulWidget {
+  const SignUpPage({super.key});
 
   @override
-  State<LoginPage> createState() => _LoginPageState();
+  State<SignUpPage> createState() => _SignUpPageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _SignUpPageState extends State<SignUpPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,7 +30,7 @@ class _LoginPageState extends State<LoginPage> {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Text(
-              'Login here',
+              'Create an account',
               textAlign: TextAlign.center,
               style: TextStyle(
                 color: HexColor('#F50057'),
@@ -40,12 +39,15 @@ class _LoginPageState extends State<LoginPage> {
               ),
             ),
             const SizedBox(height: 10.0),
-            const Text(
-              'Welcome back! You\'ve been missed!',
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                color: Colors.black,
-                fontSize: 15.0,
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 20.0),
+              child: Text(
+                'Create your account to get access to the most promissing features!',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 15.0,
+                ),
               ),
             ),
             const SizedBox(height: 20.0),
@@ -68,12 +70,22 @@ class _LoginPageState extends State<LoginPage> {
                 ),
               ),
             ),
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 25.0, vertical: 10.0),
+              child: TextField(
+                obscureText: true,
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(),
+                  hintText: 'Confirm Password',
+                ),
+              ),
+            ),
             Align(
               alignment: Alignment.topRight,
               child: Padding(
                 padding: const EdgeInsets.only(right: 25.0),
                 child: Text(
-                  'Forgot your password?',
+                  'Already have an account?',
                   style: TextStyle(
                     color: HexColor('#F50057'),
                   ),
@@ -91,18 +103,13 @@ class _LoginPageState extends State<LoginPage> {
                     borderRadius: BorderRadius.circular(5.0),
                   ),
                 ),
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => const Signup()),
-                  );
-                },
+                onPressed: () {},
                 child: const Padding(
                   padding: EdgeInsets.symmetric(
                     vertical: 10.0,
                   ),
                   child: Text(
-                    'Sign In',
+                    'Sign Up',
                     style: TextStyle(
                       fontSize: 20.0,
                       color: Colors.white,
@@ -120,7 +127,7 @@ class _LoginPageState extends State<LoginPage> {
                 color: Colors.black,
               ),
             ),
-            const SizedBox(height: 60.0),
+            const SizedBox(height: 30.0),
             Column(
               children: [
                 Text(
